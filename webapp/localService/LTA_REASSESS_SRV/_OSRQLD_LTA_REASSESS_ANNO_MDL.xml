@@ -1,0 +1,704 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='ERP_BACKEND180')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='ERP_BACKEND180')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='ERP_BACKEND180')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference Uri="../../../osrqld/lta_reassess_srv/$metadata"><edmx:Include Namespace="LTA_REASSESS_SRV" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="com.sap.osrqld.lta_reassess_anno_mdl.v1">
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_ChannelTextType/Langu"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTACMPREFUNDSType/BusinessPartner"><Annotation Term="Common.SemanticObject" String="BusinessPartner"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTACMPREFUNDSType/ReferenceSpecification"><Annotation Term="Common.SemanticObject" String="DisplayContract"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTACMPREFUNDSType">
+				<Annotation Term="UI.FieldGroup" Qualifier="Header">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Top Work Item ID"/><PropertyValue Property="Value" Path="WorkItemID"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="WorkFlowDetails">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item Text"/><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Flow Agents"/><PropertyValue Property="Value" Path="ResponsibleAgents"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Days to Complete"/><PropertyValue Property="Value" Path="DaysToComplete"/></Record>
+								<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Period"/><PropertyValue Property="Value" Path="Period"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Received"/><PropertyValue Property="Value" Path="DateReceived"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Processed (Completed)"/><PropertyValue Property="Value" Path="DateProcessed"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Cashflow Total"/><PropertyValue Property="Value" Path="TotalAmount"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Refund Amount"/><PropertyValue Property="Value" Path="RefundAmount"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Decision"/><PropertyValue Property="Value" Path="Decision"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="WorkItemID"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="SemanticObject" String="DisplayContract"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Period"/><PropertyValue Property="Value" Path="Period"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Processor"/><PropertyValue Property="Value" Path="ResponsibleAgents"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Received"/><PropertyValue Property="Value" Path="DateReceived"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Processed (Completed)"/><PropertyValue Property="Value" Path="DateProcessed"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Total Amount"/><PropertyValue Property="Value" Path="TotalAmount"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Refund Amount"/><PropertyValue Property="Value" Path="RefundAmount"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Criticality" Path="StatusCriticality"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Decision"/><PropertyValue Property="Value" Path="Decision"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>WorkItemID</PropertyPath>
+						<PropertyPath>BusinessPartner</PropertyPath>
+						<PropertyPath>ReferenceSpecification</PropertyPath>
+						<PropertyPath>Period</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAContactDetailsType">
+				<Annotation Term="UI.FieldGroup" Qualifier="ContactDetails">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="LastName"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="FirstName"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MiddleName"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="BirthDate"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CompanyName1"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CompanyName2"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ACN"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ABN"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="HouseNumberSuppl"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="HouseNumber"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Street"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="StreetSuppl"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Street3"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Street4"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Street5"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="City"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="country"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Region"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PostCode"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Email"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Phone"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAExFormType/FormBundleNumber"><Annotation Term="Common.SemanticObject" String="ManageFormbundle"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAExFormType/RegId"><Annotation Term="Common.SemanticObject" String="DisplayContract"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAExFormType">
+				<Annotation Term="UI.FieldGroup" Qualifier="HeaderInfo">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="RevenueType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Taxpayer"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Account"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="RegId"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Sub-application"/><PropertyValue Property="Value" Path="RegType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Form-Based Process"/><PropertyValue Property="Value" Path="FormProcess"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="FormbundleType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CreatedBy"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CreatedAt"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ChangedBy"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ChangedAt"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Key Date"/><PropertyValue Property="Value" Path="KeyDate"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="FormbundleStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Fbust"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Fbstz"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Receipt"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Client"/><PropertyValue Property="Value" Path="Taxpayer"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Contract"/><PropertyValue Property="SemanticObject" String="DisplayContract"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="RegId"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Channel"/><PropertyValue Property="Value" Path="Channel"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="FormbundleStatus"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Transaction Type"/><PropertyValue Property="Value" Path="TransactionType"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Formbundle"/><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Reassessed"/><PropertyValue Property="Value" Path="Reassessed"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Created by"/><PropertyValue Property="Value" Path="CreatedBy"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Changed by"/><PropertyValue Property="Value" Path="ChangedBy"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Received date"/><PropertyValue Property="Value" Path="Receipt"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>FormbundleStatus</PropertyPath>
+						<PropertyPath>Taxpayer</PropertyPath>
+						<PropertyPath>RegId</PropertyPath>
+						<PropertyPath>Channel</PropertyPath>
+						<PropertyPath>FormBundleNumber</PropertyPath>
+						<PropertyPath>CreatedBy</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAICMBType/BusinessPartner"><Annotation Term="Common.SemanticObject" String="BusinessPartner"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAICMBType/ReferenceSpecification"><Annotation Term="Common.SemanticObject" String="DisplayContract"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAICMBType/FormBundleNumber"><Annotation Term="Common.SemanticObject" String="LTAFormbundle"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAICMBType">
+				<Annotation Term="UI.FieldGroup" Qualifier="Header">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Top Work Item ID"/><PropertyValue Property="Value" Path="TopWorkItemID"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="WorkFlowDetails">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="ApprovalWorkItemID"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item Text"/><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item Agents"/><PropertyValue Property="Value" Path="Processor"/></Record>
+								<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Received"/><PropertyValue Property="Value" Path="DateRecieved"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ReassesTrigger"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Rule"/><PropertyValue Property="Value" Path="RuleType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Decision"/><PropertyValue Property="Value" Path="Decision"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Form Bundle Number"/><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Incomplete Bulk Reassessment"/><PropertyValue Property="TypeNamePlural" String="Incomplete Bulk Reassessments"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="ApprovalWorkItemID"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="SemanticObject" String="DisplayContract"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Processor"/><PropertyValue Property="Value" Path="Processor"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Recieved"/><PropertyValue Property="Value" Path="DateRecieved"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Reassess Trigger"/><PropertyValue Property="Value" Path="ReassesTrigger"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Rule"/><PropertyValue Property="Value" Path="RuleType"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Decision"/><PropertyValue Property="Value" Path="Decision"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Form Bundle Number"/><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>ApprovalWorkItemID</PropertyPath>
+						<PropertyPath>BusinessPartner</PropertyPath>
+						<PropertyPath>ReferenceSpecification</PropertyPath>
+						<PropertyPath>RuleType</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTACmpReassessType/BusinessPartner"><Annotation Term="Common.SemanticObject" String="BusinessPartner"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTACmpReassessType/ReferenceSpecification"><Annotation Term="Common.SemanticObject" String="DisplayContract"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTACmpReassessType/FormBundleNumber"><Annotation Term="Common.SemanticObject" String="LTAFormbundle"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTACmpReassessType">
+				<Annotation Term="UI.FieldGroup" Qualifier="Header">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Top Work Item ID"/><PropertyValue Property="Value" Path="ApprovalWorkItemID"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="WorkFlowDetails">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item Text"/><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Flow Agents"/><PropertyValue Property="Value" Path="Processor"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Days to Complete"/><PropertyValue Property="Value" Path="DaysToComplete"/></Record>
+								<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Period"/><PropertyValue Property="Value" Path="Period"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Received"/><PropertyValue Property="Value" Path="DateReceived"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Processed (Completed)"/><PropertyValue Property="Value" Path="DateProcessed"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Cashflow Total"/><PropertyValue Property="Value" Path="TotalAmount"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ReassesTrigger"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Rule"/><PropertyValue Property="Value" Path="RuleType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Decision"/><PropertyValue Property="Value" Path="Decision"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Form Bundle Number"/><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Reassessment"/><PropertyValue Property="TypeNamePlural" String="Reassessments"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="ApprovalWorkItemID"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="SemanticObject" String="DisplayContract"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Period"/><PropertyValue Property="Value" Path="Period"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Processor"/><PropertyValue Property="Value" Path="Processor"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Received"/><PropertyValue Property="Value" Path="DateReceived"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Processed (Completed)"/><PropertyValue Property="Value" Path="DateProcessed"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Total Amount"/><PropertyValue Property="Value" Path="TotalAmount"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Reassess Trigger"/><PropertyValue Property="Value" Path="ReassesTrigger"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Rule"/><PropertyValue Property="Value" Path="RuleType"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Criticality" Path="StatusCriticality"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Decision"/><PropertyValue Property="Value" Path="Decision"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Form Bundle Number"/><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>ApprovalWorkItemID</PropertyPath>
+						<PropertyPath>BusinessPartner</PropertyPath>
+						<PropertyPath>ReferenceSpecification</PropertyPath>
+						<PropertyPath>RuleType</PropertyPath>
+						<PropertyPath>Period</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAICMEXType/BusinessPartner"><Annotation Term="Common.SemanticObject" String="BusinessPartner"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAICMEXType/ReferenceSpecification"><Annotation Term="Common.SemanticObject" String="DisplayContract"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAICMEXType/FormBundleNumber"><Annotation Term="Common.SemanticObject" String="LTAFormbundle"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAICMEXType">
+				<Annotation Term="UI.FieldGroup" Qualifier="Header">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Top Work Item ID"/><PropertyValue Property="Value" Path="TopWorkItemID"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="HeaderText">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Warning"/><PropertyValue Property="Criticality" Path="WarningCriticality"/><PropertyValue Property="Value" Path="HeaderDescription"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="WorkFlowDetails">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="ApprovalWorkItemID"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item Text"/><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item Agents"/><PropertyValue Property="Value" Path="Processor"/></Record>
+								<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Received"/><PropertyValue Property="Value" Path="DateRecieved"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ReassesTrigger"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Rule"/><PropertyValue Property="Value" Path="RuleType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Criticality" Path="StatusCriticality"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Decision"/><PropertyValue Property="Value" Path="Decision"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Form Bundle Number"/><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Incomplete Exception Reassessment"/><PropertyValue Property="TypeNamePlural" String="Incomplete Exception Reassessments"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="ApprovalWorkItemID"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="SemanticObject" String="DisplayContract"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Processor"/><PropertyValue Property="Value" Path="Processor"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Recieved"/><PropertyValue Property="Value" Path="DateRecieved"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Reassess Trigger"/><PropertyValue Property="Value" Path="ReassesTrigger"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Rule"/><PropertyValue Property="Value" Path="RuleType"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Criticality" Path="StatusCriticality"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Decision"/><PropertyValue Property="Value" Path="Decision"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Form Bundle Number"/><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>ApprovalWorkItemID</PropertyPath>
+						<PropertyPath>BusinessPartner</PropertyPath>
+						<PropertyPath>ReferenceSpecification</PropertyPath>
+						<PropertyPath>RuleType</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAICMNBType/BusinessPartner"><Annotation Term="Common.SemanticObject" String="BusinessPartner"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAICMNBType/ReferenceSpecification"><Annotation Term="Common.SemanticObject" String="DisplayContract"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAICMNBType/FormBundleNumber"><Annotation Term="Common.SemanticObject" String="LTAFormbundle"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAICMNBType">
+				<Annotation Term="UI.FieldGroup" Qualifier="Header">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Top Work Item ID"/><PropertyValue Property="Value" Path="TopWorkItemID"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="WorkFlowDetails">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="ApprovalWorkItemID"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item Text"/><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item Agents"/><PropertyValue Property="Value" Path="Processor"/></Record>
+								<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Received"/><PropertyValue Property="Value" Path="DateRecieved"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ReassesTrigger"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Rule"/><PropertyValue Property="Value" Path="RuleType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Decision"/><PropertyValue Property="Value" Path="Decision"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Form Bundle Number"/><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Incomplete Non-Bulk Reassessment"/><PropertyValue Property="TypeNamePlural" String="Incomplete Non-Bulk Reassessments"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="ApprovalWorkItemID"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="SemanticObject" String="DisplayContract"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Processor"/><PropertyValue Property="Value" Path="Processor"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Recieved"/><PropertyValue Property="Value" Path="DateRecieved"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Reassess Trigger"/><PropertyValue Property="Value" Path="ReassesTrigger"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Rule"/><PropertyValue Property="Value" Path="RuleType"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Decision"/><PropertyValue Property="Value" Path="Decision"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Form Bundle Number"/><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>ApprovalWorkItemID</PropertyPath>
+						<PropertyPath>BusinessPartner</PropertyPath>
+						<PropertyPath>ReferenceSpecification</PropertyPath>
+						<PropertyPath>RuleType</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAInvDetsType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemID"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="InvoiceDocumentNumber"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DueDate"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="FiscalYear"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CreationDate"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CreationTime"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="FICADocumentNumber"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="InvoiceDocumentItem"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PostingDate"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DocumentDate"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="TransactionAmount"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MainTransaction"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Subtransaction"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAIRPRType/BusinessPartner"><Annotation Term="Common.SemanticObject" String="BusinessPartner"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAIRPRType/ReferenceSpecification"><Annotation Term="Common.SemanticObject" String="DisplayContract"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAIRPRType/FormBundleNumber"><Annotation Term="Common.SemanticObject" String="LTAFormbundle"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAIRPRType">
+				<Annotation Term="UI.FieldGroup" Qualifier="Header">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="WorkItemID"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="WorkFlowDetails">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Flow Agents"/><PropertyValue Property="Value" Path="ResponsibleAgents"/></Record>
+								<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Invoice Number"/><PropertyValue Property="Value" Path="InvoiceNumber"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Spool ID"/><PropertyValue Property="Value" Path="SpoolID"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Period"/><PropertyValue Property="Value" Path="Period"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Received"/><PropertyValue Property="Value" Path="DateRecieved"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Criticality" Path="StatusCriticality"/><PropertyValue Property="Value" Path="Status"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Decision"/><PropertyValue Property="Value" Path="Decision"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Form Bundle Number"/><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item Text"/><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Last Error"/><PropertyValue Property="Value" Path="LastError"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Credit document"/><PropertyValue Property="Value" Path="DocumentNumber"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Reassessment"/><PropertyValue Property="TypeNamePlural" String="Reassessments"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="WorkItemID"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="SemanticObject" String="DisplayContract"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Invoice Number"/><PropertyValue Property="Value" Path="InvoiceNumber"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Spool ID"/><PropertyValue Property="Value" Path="SpoolID"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Period"/><PropertyValue Property="Value" Path="Period"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Processor"/><PropertyValue Property="Value" Path="ResponsibleAgents"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Received"/><PropertyValue Property="Value" Path="DateRecieved"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Criticality" Path="StatusCriticality"/><PropertyValue Property="Value" Path="Status"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Decision"/><PropertyValue Property="Value" Path="Decision"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Form Bundle Number"/><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item Text"/><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>BusinessPartner</PropertyPath>
+						<PropertyPath>ReferenceSpecification</PropertyPath>
+						<PropertyPath>InvoiceNumber</PropertyPath>
+						<PropertyPath>SpoolID</PropertyPath>
+						<PropertyPath>TaskID</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTALndDetSubType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ExemptionCheck"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PropertyId"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="LandDescription"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="LandAddress"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="EntitlementLand"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="LandUseCode"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="LandUseDescription"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTARFNDBType/BusinessPartner"><Annotation Term="Common.SemanticObject" String="BusinessPartner"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTARFNDBType/ReferenceSpecification"><Annotation Term="Common.SemanticObject" String="DisplayContract"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTARFNDBType">
+				<Annotation Term="UI.FieldGroup" Qualifier="Header">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="WorkItemID"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="WorkFlowDetails">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Document Number"/><PropertyValue Property="Value" Path="DocumentNumber"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item Text"/><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Flow Agents"/><PropertyValue Property="Value" Path="ResponsibleAgents"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Processed (Completed)"/><PropertyValue Property="Value" Path="DateProcessed"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Refund Amount"/><PropertyValue Property="Value" Path="RefundAmount"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Refunds Bulk Approval"/><PropertyValue Property="TypeNamePlural" String="Refunds Bulk Approvals"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="WorkItemID"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="SemanticObject" String="DisplayContract"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Document Number"/><PropertyValue Property="Value" Path="DocumentNumber"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Payment Method"/><PropertyValue Property="Value" Path="PaymentMethod"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Processor"/><PropertyValue Property="Value" Path="ResponsibleAgents"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Refund Amount"/><PropertyValue Property="Value" Path="RefundAmount"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Received"/><PropertyValue Property="Value" Path="DateReceived"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Processed (Completed)"/><PropertyValue Property="Value" Path="DateProcessed"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Criticality" Path="StatusCriticality"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>BusinessPartner</PropertyPath>
+						<PropertyPath>ReferenceSpecification</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTARFNDNBType/BusinessPartner"><Annotation Term="Common.SemanticObject" String="BusinessPartner"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTARFNDNBType/ReferenceSpecification"><Annotation Term="Common.SemanticObject" String="DisplayContract"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTARFNDNBType">
+				<Annotation Term="UI.FieldGroup" Qualifier="Header">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="WorkItemID"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="WorkFlowDetails">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Document Number"/><PropertyValue Property="Value" Path="DocumentNumber"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item Text"/><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Flow Agents"/><PropertyValue Property="Value" Path="ResponsibleAgents"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Processed (Completed)"/><PropertyValue Property="Value" Path="DateProcessed"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Refund Amount"/><PropertyValue Property="Value" Path="RefundAmount"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Refunds Non-bulk Approval"/><PropertyValue Property="TypeNamePlural" String="Refunds Non-bulk Approvals"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="WorkItemID"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="SemanticObject" String="BusinessPartner"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="Label" String="RE Contract"/><PropertyValue Property="SemanticObject" String="DisplayContract"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="Value" Path="ReferenceSpecification"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Document Number"/><PropertyValue Property="Value" Path="DocumentNumber"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Payment Method"/><PropertyValue Property="Value" Path="PaymentMethod"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Processor"/><PropertyValue Property="Value" Path="ResponsibleAgents"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Refund Amount"/><PropertyValue Property="Value" Path="RefundAmount"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Received"/><PropertyValue Property="Value" Path="DateReceived"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Date Processed (Completed)"/><PropertyValue Property="Value" Path="DateProcessed"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Criticality" Path="StatusCriticality"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>BusinessPartner</PropertyPath>
+						<PropertyPath>ReferenceSpecification</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAYearsValuesType">
+				<Annotation Term="UI.FieldGroup" Qualifier="AssessmentDetails">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Invoice Document Number"/><PropertyValue Property="Value" Path="InvoiceDocNumber"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Transaction Number"/><PropertyValue Property="Value" Path="Assessment"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item ID"/><PropertyValue Property="Value" Path="WorkItemID"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Period"/><PropertyValue Property="Value" Path="FiscalYear"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Creation Date"/><PropertyValue Property="Value" Path="CreationDate"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Creation Time"/><PropertyValue Property="Value" Path="CreationTime"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Work Item Text"/><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Flow Type"/><PropertyValue Property="Value" Path="FlowType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Amount"/><PropertyValue Property="Value" Path="NominalAmount"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Business Partner"/><PropertyValue Property="Value" Path="BusinessPartner"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Contract Account"/><PropertyValue Property="Value" Path="ContractAccount"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Reassessment Year"/><PropertyValue Property="TypeNamePlural" String="Reassessment Years"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataFieldWithIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ERROR: Mandatory Value for Semantic Object not found"/><PropertyValue Property="Action" String=""/><PropertyValue Property="Value" Path="WorkItemID"/></Record>
+						</PropertyValue>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="FiscalYear"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemStatus"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CreationDate"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CreationTime"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemText"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="FlowType"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="NominalAmount"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Assessment"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="InvoiceDocNumber"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem" Qualifier="AssessmentLineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="WorkItemID"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_PeriodTextType/Langu"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxC_LTAApprDTType">
+				<Annotation Term="UI.LineItem"><Collection/></Annotation>
+				<Annotation Term="UI.LineItem" Qualifier="FBYears">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="FormBundleNumber"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="FormBundleYear"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem" Qualifier="Messages">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Message"/><PropertyValue Property="Criticality" Path="Criticality"/><PropertyValue Property="Value" Path="MessageText"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="OSRQLD.LTA_REASSESS_SRV.xOSRQLDxI_LTARFCKType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MessageText"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
