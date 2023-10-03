@@ -5,7 +5,7 @@ sap.ui.define(["sap/ovp/app/Component"], function (Component) {
 	 *   OData service.
 	 * @version @version@
 	 */
-	return Component.extend("osrqld.trm.lta.ltaoverviewpage.Component", {
+	return Component.extend("osrqld.trm.lta.completedoverviewpage.Component", {
 		metadata: {
 			manifest: "json"
 		}

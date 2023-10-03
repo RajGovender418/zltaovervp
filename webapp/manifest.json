@@ -2,7 +2,7 @@
 	"_version": "1.7.0",
 	"start_url": "start.html",
 	"sap.app": {
-		"id": "osrqld.trm.lta.ltaoverviewpage",
+		"id": "osrqld.trm.lta.completedoverviewpage",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -70,14 +70,21 @@
 				"type": "sap.ui.model.resource.ResourceModel",
 				"uri": "i18n/i18n.properties"
 			},
-			"LTA_REASSESS_SRV": {
-				"dataSource": "LTA_REASSESS_SRV",
+			"mainService": {
+				"dataSource": "mainService",
+				"preload": true,
 				"settings": {
-					"defaultCountMode": "Inline"
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"refreshAfterChange": false,
+					"metadataUrlParams": {
+						"sap-value-list": "none"
+					}
 				}
 			}
 		},
 		"extends": {
+			"component": "sap.ovp.app",
 			"extensions": {}
 		},
 		"contentDensities": {
@@ -86,10 +93,44 @@
 		}
 	},
 	"sap.ovp": {
-		"globalFilterModel": "LTA_REASSESS_SRV",
+		"globalFilterModel": "mainService",
+		"globalFilterEntityType": "xOSRQLDxC_LTACRAnaType",
 		"containerLayout": "resizable",
 		"enableLiveFilter": false,
-		"considerAnalyticalParameters": true,
-		"cards": {}
+		"considerAnalyticalParameters": false,
+		"useDateRangeType": true,
+		"filterSettings": {
+			"dateSettings": {
+				"selectedValues": "DAYS,WEEK,MONTH,DATERANGE,QUARTER,YEAR",
+				"fields": {
+					"WorkItemEndDate": {
+						"selectedValues": "LASTDAYS,YEARTODATE",
+						"exclude": false
+					}
+				}
+			}
+		},
+		"cards": {
+			"card01": {
+				"model": "mainService",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "Total Completed Reassessments",
+					"entitySet": "xOSRQLDxC_LTACRAna",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#statusChartIndentification",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#statusChartCount",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#CompleteChart",
+					"defaultSpan": {
+						"cols": 99,
+						"rows": 3
+					}
+				}
+			}
+		},
+		"refreshIntervalInMinutes": 2
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/osrqld/cpmovp/webapp",
+		"_version": "1.1.0"
 	}
 }

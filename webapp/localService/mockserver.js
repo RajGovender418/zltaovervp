@@ -6,7 +6,7 @@ sap.ui.define([
 ], function (MockServer, UriParameters, Log, XMLHelper) {
 	"use strict";
 	var oMockServer,
-		_sAppModulePath = "osrqld.trm.lta.ltaoverviewpage/";
+		_sAppModulePath = "osrqld.trm.lta.completedoverviewpage/";
 
 	return {
 		/**
