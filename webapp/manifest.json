@@ -99,17 +99,6 @@
 		"enableLiveFilter": false,
 		"considerAnalyticalParameters": false,
 		"useDateRangeType": true,
-		"filterSettings": {
-			"dateSettings": {
-				"selectedValues": "DAYS,WEEK,MONTH,DATERANGE,QUARTER,YEAR",
-				"fields": {
-					"WorkItemEndDate": {
-						"selectedValues": "LASTDAYS,YEARTODATE",
-						"exclude": false
-					}
-				}
-			}
-		},
 		"cards": {
 			"card01": {
 				"model": "mainService",
@@ -117,12 +106,12 @@
 				"settings": {
 					"title": "Total Completed Reassessments",
 					"entitySet": "xOSRQLDxC_LTACRAna",
+					"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#totalCountDataPoint",
 					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#statusChartIndentification",
 					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#statusChartCount",
 					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#CompleteChart",
 					"defaultSpan": {
-						"cols": 99,
-						"rows": 3
+						"cols": 99
 					}
 				}
 			}

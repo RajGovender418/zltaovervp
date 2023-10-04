@@ -25,8 +25,7 @@
         "type": "service",
         "name": "sapui5",
         "preferLocal": true,
-        "entryPath": "/resources",
-        "version": "1.71.59"
+        "entryPath": "/resources"
       },
       "description": "SAPUI5 Resources"
     },
@@ -35,8 +34,7 @@
       "target": {
         "type": "service",
         "name": "sapui5",
-        "preferLocal": true,
-        "version": "1.71.59"
+        "preferLocal": true
       },
       "description": "SAPUI5 dist layer resources"
     },
@@ -45,8 +43,7 @@
       "target": {
         "type": "service",
         "name": "sapui5",
-        "entryPath": "/resources",
-        "version": "1.71.59"
+        "entryPath": "/resources"
       },
       "description": "SAPUI5 Resources"
     },
@@ -55,8 +52,7 @@
       "target": {
         "type": "service",
         "name": "sapui5",
-        "entryPath": "/test-resources",
-        "version": "1.71.59"
+        "entryPath": "/test-resources"
       },
       "description": "SAPUI5 Test Resources"
     },
@@ -65,8 +61,7 @@
       "target": {
         "type": "service",
         "name": "sapui5",
-        "entryPath": "/test-resources",
-        "version": "1.71.59"
+        "entryPath": "/test-resources"
       },
       "description": "SAPUI5 Test Resources"
     },

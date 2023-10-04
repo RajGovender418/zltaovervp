@@ -9,10 +9,25 @@
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="osrqld.trm.lta.completereassess.test.LTA_REASSESS_SRV">
 			<Annotations Target="Metadata.xOSRQLDxC_LTACRAnaType">
+				<Annotation Term="UI.DataPoint" Qualifier="totalCountDataPoint">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="RecordTotal"/>
+						<PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Donut"/>
+						<PropertyValue Property="ValueFormat">
+							<Record Type="UI.NumberFormat"/>
+						</PropertyValue>
+						<PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Positive"/>
+						<PropertyValue Property="CriticalityCalculation">
+							<Record Type="UI.CriticalityCalculationType">
+								<PropertyValue Property="ImprovementDirection" EnumMember="UI.ImprovementDirectionType/Target"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
 				<Annotation Term="UI.Identification" Qualifier="statusChartIndentification">
 					<Collection>
 						<Record Type="UI.DataFieldForIntentBasedNavigation">
-							<PropertyValue Property="SemanticObject" String="Partner"/>
+							<PropertyValue Property="SemanticObject" String="CompletedReasses"/>
 						</Record>
 					</Collection>
 				</Annotation>
@@ -27,34 +42,34 @@
 						</PropertyValue>
 						<PropertyValue Property="Title">
 							<Apply Function="odata.concat">
-								<String>{@i18n&gt;TOTAL_COMPLETED_REASSESSMENTS}</String> <Path>ApprovedCount</Path> </Apply> </PropertyValue> <PropertyValue Property="MeasureAttributes">
+								<String>{@i18n&gt;TOTAL_COMPLETED_REASSESSMENTS}</String> <Path>RecordTotal</Path> </Apply> </PropertyValue> <PropertyValue Property="MeasureAttributes">
 							
 						      
-						      <Collection>      
+						              <Collection>      
 						      
-						      <Record Type="UI.ChartMeasureAttributeType">          
+						                      <Record Type="UI.ChartMeasureAttributeType">          
 						      
 						      
 						      
-						       <PropertyValue Property="Measure" PropertyPath="RejectedCount"/> <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/> </Record> <Record  Type="UI.ChartMeasureAttributeType"> <PropertyValue Property="Measure" PropertyPath="ApprovedCount"/> <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/> </Record> </Collection> </PropertyValue> <PropertyValue Property="Dimensions">
+						                       <PropertyValue Property="Measure" PropertyPath="RejectedCount"/> <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/> </Record> <Record Type="UI.ChartMeasureAttributeType">                 <PropertyValue Property="Measure" PropertyPath="ApprovedCount"/> <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/> </Record> </Collection> </PropertyValue> <PropertyValue Property="Dimensions">
 							
-						       <Collection>
+						               <Collection>
 								
-							       <PropertyPath>WorkItemEndDate</PropertyPath> </Collection> </PropertyValue> <PropertyValue Property="DimensionAttributes">
+							               <PropertyPath>WorkItemEndDate</PropertyPath> </Collection> </PropertyValue> <PropertyValue Property="DimensionAttributes">
 							
-						       <Collection>     
-						       <Record Type="UI.ChartDimensionAttributeType">         
+						               <Collection>     
+						               <Record Type="UI.ChartDimensionAttributeType">         
 						      
 						      
-						       <PropertyValue Property="Dimension" PropertyPath="WorkItemEndDate"/> <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/> </Record> </Collection> </PropertyValue> <PropertyValue Property="Actions">
+						                       <PropertyValue Property="Dimension" PropertyPath="WorkItemEndDate"/> <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/> </Record> </Collection> </PropertyValue> <PropertyValue Property="Actions">
 							
 						     
-						      <Collection/> </PropertyValue> </Record> </Annotation> <Annotation Term="UI.PresentationVariant" Qualifier="statusChartCount">
+						              <Collection/> </PropertyValue> </Record> </Annotation> <Annotation Term="UI.PresentationVariant" Qualifier="statusChartCount">
 					
-				       <Record Type="UI.PresentationVariantType">
+				               <Record Type="UI.PresentationVariantType">
 						
-					                 <PropertyValue Property="Visualizations">
+					                                         <PropertyValue Property="Visualizations">
 							
-						       <Collection>
+						               <Collection>
 								
-							       <AnnotationPath>@UI.Chart#CompletedChart</AnnotationPath> </Collection> </PropertyValue> <PropertyValue Property="Total">        <Collection>        <PropertyPath>RecordTotal</PropertyPath> </Collection> </PropertyValue> <PropertyValue Property="RequestAtLeast">    <Collection>          <PropertyPath>WorkItemStatus</PropertyPath> <PropertyPath>RecordTotal</PropertyPath> <PropertyPath>WorkItemEndDate</PropertyPath> </Collection> </PropertyValue> </Record> </Annotation> </Annotations> </Schema> </edmx:DataServices> </edmx:Edmx>
+							             </Collection> </PropertyValue> <PropertyValue Property="Total">                <Collection>                <PropertyPath>RejectedCount</PropertyPath> <PropertyPath >ApprovedCount</PropertyPath> </Collection> </PropertyValue> <PropertyValue Property="RequestAtLeast">            <Collection>                                  <PropertyPath>RecordTotal</PropertyPath> <PropertyPath>WorkItemEndDate</PropertyPath> </Collection> </PropertyValue> </Record> </Annotation> </Annotations> </Schema> </edmx:DataServices> </edmx:Edmx>
