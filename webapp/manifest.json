@@ -106,12 +106,53 @@
 				"settings": {
 					"title": "Total Completed Reassessments",
 					"entitySet": "xOSRQLDxC_LTACRAna",
-					"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#totalCountDataPoint",
-					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#statusChartIndentification",
-					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#statusChartCount",
-					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#CompleteChart",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#CompleteARIndentification",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#CompleteARPresVar",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#CompleteARChart",
 					"defaultSpan": {
 						"cols": 99
+					}
+				}
+			},
+			"card02": {
+				"model": "mainService",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "Total Days to Complete",
+					"entitySet": "xOSRQLDxC_LTACmpReassess",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#TotalDaysIndentification",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#TotalDaysPresVar",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#TotalDaysChart",
+					"defaultSpan": {
+						"cols": 10
+					}
+				}
+			},
+			"card03": {
+				"model": "mainService",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "Total Amount",
+					"entitySet": "xOSRQLDxC_LTACmpReassess",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#TotalDaysIndentification",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#TotalDaysPresVar",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#TotalAmountChart",
+					"defaultSpan": {
+						"cols": 10
+					}
+				}
+			},
+			"card04": {
+				"model": "mainService",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "Bulk, Individual, and Exception Reassessments",
+					"entitySet": "xOSRQLDxC_LTACDAna",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#TotalDaysIndentification",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#TotalDaysPresVar",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#CompletedDecisionsChart",
+					"defaultSpan": {
+						"cols": 10
 					}
 				}
 			}
