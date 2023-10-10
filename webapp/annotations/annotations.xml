@@ -32,100 +32,240 @@
 								<PropertyPath>RejectedCount</PropertyPath>
 							</Collection>
 						</PropertyValue>
-						<PropertyValue Property="Title">
-							<Apply Function="odata.concat">
-								<String>{@i18n&gt;TOTAL_COMPLETED_REASSESSMENTS}</String> <Path>RecordTotal</Path> </Apply> </PropertyValue> <PropertyValue Property="MeasureAttributes">
-							
-						          <Collection>
-								
-								
-							                    <Record Type="UI.ChartMeasureAttributeType">
-									
-									
-								                    <PropertyValue Property="Measure" PropertyPath="RejectedCount"/> <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/> </Record> <Record Type="UI.ChartMeasureAttributeType">
-									
-									
-								                    <PropertyValue Property="Measure" PropertyPath="ApprovedCount"/> <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/> </Record> </Collection> </PropertyValue> <PropertyValue Property="Dimensions">
-							
-						          <Collection>
-								
-							          <PropertyPath>DateProcessed</PropertyPath> </Collection> </PropertyValue> <PropertyValue Property="DimensionAttributes">
-							
-						          <Collection>
-								
-							          <Record Type="UI.ChartDimensionAttributeType">
-									
-									
-								                    <PropertyValue Property="Dimension" PropertyPath="DateProcessed"/> <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/> </Record> </Collection> </PropertyValue> </Record> </Annotation> <Annotation Term="UI.PresentationVariant" Qualifier="CompleteARPresVar">
-					
-				          <Record Type="UI.PresentationVariantType">
-						
-						
-						
-					                              <PropertyValue Property="Visualizations">
-							
-						          <Collection/> </PropertyValue> <PropertyValue Property="Total">
-							
-						          <Collection>
-								
-								
-							                    <PropertyPath>RejectedCount</PropertyPath> <PropertyPath>ApprovedCount</PropertyPath> </Collection> </PropertyValue> <PropertyValue Property="RequestAtLeast">
-							
-						          <Collection>
-								
-								
-							                    <PropertyPath>RecordTotal</PropertyPath> <PropertyPath>DateProcessed</PropertyPath> </Collection> </PropertyValue> </Record> </Annotation> </Annotations> <Annotations Target="Metadata.xOSRQLDxC_LTACmpReassessType">  
-				
-				
-			                               <Annotation Term="UI.Chart" Qualifier="TotalAmountChart">    <Record Type="UI.ChartDefinitionType">                   <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/> <PropertyValue Property="Measures">    <Collection/> </PropertyValue> <PropertyValue Property="Title" String="{@i18n&gt;TOTAL_AMOUNT}"/> <PropertyValue Property="MeasureAttributes">    <Collection>    <Record Type="UI.ChartMeasureAttributeType">       <PropertyValue Property="Measure" PropertyPath="TotalAmount"/> <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/> </Record> </Collection> </PropertyValue> <PropertyValue Property="Dimensions">    <Collection>    <PropertyPath>ApprovalWorkItemID</PropertyPath> </Collection> </PropertyValue> <PropertyValue Property="DimensionAttributes">    <Collection>    <Record Type="UI.ChartDimensionAttributeType">       <PropertyValue Property="Dimension" PropertyPath="ApprovalWorkItemID"/> <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/> </Record> </Collection> </PropertyValue> </Record> </Annotation> <Annotation Term="UI.Identification" Qualifier="TotalDaysIndentification"> 
-								          <Collection>
-						
-					         <Record Type="UI.DataFieldForIntentBasedNavigation">
-							
-						         <PropertyValue Property="SemanticObject" String="CompletedReasses"/> </Record> </Collection> </Annotation> <Annotation Term="UI.PresentationVariant" Qualifier="TotalDaysPresVar">
-					
-				          <Record Type="UI.PresentationVariantType">
-						
-					          <PropertyValue Property="RequestAtLeast">
-							
-						          <Collection>
-								
-								
-							           
-							           
-							           
-							             <PropertyPath>ApprovalWorkItemID</PropertyPath> <PropertyPath>DaysToComplete</PropertyPath> <PropertyPath>DateProcessed</PropertyPath> </Collection> </PropertyValue> </Record> </Annotation> <Annotation Term="UI.Chart" Qualifier="TotalDaysChart">
-					
-				          <Record Type="UI.ChartDefinitionType">
-						
-						
-						
-						
-						
-						
-						
-						
-					                                           
-					                                                                          <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/> <PropertyValue Property="Title" String="{@i18n&gt;TOTAL_DAYS_TO_COMPLETE}"/> <PropertyValue Property="Description" String="{@i18n&gt;DESCRIPTION}"/> <PropertyValue Property="Measures">
-							
-						          <Collection>
-								
-							          <PropertyPath>DaysToComplete</PropertyPath> </Collection> </PropertyValue> <PropertyValue Property="MeasureAttributes">
-							
-						          <Collection>
-								
-							          <Record Type="UI.ChartMeasureAttributeType">
-									
-									
-								                    <PropertyValue Property="Measure" PropertyPath="DaysToComplete"/> <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/> </Record> </Collection> </PropertyValue> <PropertyValue Property="Dimensions">
-							
-						          <Collection>
-								
-							          <PropertyPath>ApprovalWorkItemID</PropertyPath> </Collection> </PropertyValue> <PropertyValue Property="DimensionAttributes">
-							
-						          <Collection>
-								
-							          <Record Type="UI.ChartDimensionAttributeType">
-									
-									
-								                    <PropertyValue Property="Dimension" PropertyPath="ApprovalWorkItemID"/> <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/> </Record> </Collection> </PropertyValue> </Record> </Annotation> </Annotations> <Annotations Target="Metadata.xOSRQLDxC_LTACDAnaType">       <Annotation Term="UI.Identification">   <Collection/> </Annotation> <Annotation Term="UI.PresentationVariant">   <Record Type="UI.PresentationVariantType"/> </Annotation> <Annotation Term="UI.Chart" Qualifier="CompletedDecisionsChart">   <Record Type="UI.ChartDefinitionType">             <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/> <PropertyValue Property="DimensionAttributes">   <Collection>   <Record Type="UI.ChartDimensionAttributeType">     <PropertyValue Property="Dimension" PropertyPath="DateRecieved"/> <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/> </Record> </Collection> </PropertyValue> <PropertyValue Property="Dimensions">   <Collection>   <PropertyPath>DateRecieved</PropertyPath> </Collection> </PropertyValue> <PropertyValue Property="MeasureAttributes">   <Collection>       <Record Type="UI.ChartMeasureAttributeType">     <PropertyValue Property="Measure" PropertyPath="CompleteBulkCount"/> <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/> </Record> <Record Type="UI.ChartMeasureAttributeType">     <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/> <PropertyValue Property="Measure" PropertyPath="CompleteExceptCount"/> </Record> <Record Type="UI.ChartMeasureAttributeType">     <PropertyValue Property="Measure" PropertyPath="CompleteNonBulkCount"/> <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis3"/> </Record> </Collection> </PropertyValue> <PropertyValue Property="Measures">   <Collection>       <PropertyPath>CompleteBulkCount</PropertyPath> <PropertyPath>CompleteExceptCount</PropertyPath> <PropertyPath>CompleteNonBulkCount</PropertyPath> </Collection> </PropertyValue> <PropertyValue Property="Title" String="{@i18n&gt;BULK,_INDIVIDUAL,_AND_EXCEPTION_REASSESSMENTS}"/> </Record> </Annotation> </Annotations> </Schema> </edmx:DataServices> </edmx:Edmx>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="RejectedCount"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="ApprovedCount"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>DateProcessed</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="DateProcessed"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="CompleteARPresVar">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="Visualizations">
+							<Collection/>
+						</PropertyValue>
+						<PropertyValue Property="Total">
+							<Collection>
+								<PropertyPath>RejectedCount</PropertyPath>
+								<PropertyPath>ApprovedCount</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>RecordTotal</PropertyPath>
+								<PropertyPath>DateProcessed</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="Metadata.xOSRQLDxC_LTACmpReassessType">
+				<Annotation Term="UI.Chart" Qualifier="TotalAmountChart">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/>
+						<PropertyValue Property="Measures">
+							<Collection/>
+						</PropertyValue>
+						<PropertyValue Property="Title" String="{@i18n&gt;TOTAL_AMOUNT}"/>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="TotalAmount"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>ApprovalWorkItemID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="ApprovalWorkItemID"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="TotalDaysIndentification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation">
+							<PropertyValue Property="SemanticObject" String="CompletedReasses"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="TotalDaysPresVar">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>ApprovalWorkItemID</PropertyPath>
+								<PropertyPath>DaysToComplete</PropertyPath>
+								<PropertyPath>DateProcessed</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="TotalDaysChart">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
+						<PropertyValue Property="Description" String="{@i18n&gt;DESCRIPTION}"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>DaysToComplete</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="DaysToComplete"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>ApprovalWorkItemID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="ApprovalWorkItemID"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="Metadata.xOSRQLDxC_LTACDAnaType">
+				<Annotation Term="UI.Identification">
+					<Collection/>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant">
+					<Record Type="UI.PresentationVariantType"/>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="CompletedDecisionsChart">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="DateProcessed"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>DateProcessed</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="CompleteBulkCount"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/>
+									<PropertyValue Property="Measure" PropertyPath="CompleteExceptCount"/>
+								</Record>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="CompleteNonBulkCount"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis3"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>CompleteBulkCount</PropertyPath>
+								<PropertyPath>CompleteExceptCount</PropertyPath>
+								<PropertyPath>CompleteNonBulkCount</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="Metadata.xOSRQLDxC_LTARFDANType">
+				<Annotation Term="UI.Identification" Qualifier="RefundsBNIdentification">
+					<Collection>
+						<Record Type="UI.DataFieldWithIntentBasedNavigation">
+							<PropertyValue Property="SemanticObject" String="Test"/>
+							<PropertyValue Property="Value" Path="CompleteBulkCount"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="RefundsBNPresVar">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>CompleteBulkCount</PropertyPath>
+								<PropertyPath>CompleteNonBulkCount</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="RefundsBNChart">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>CompleteNonBulkCount</PropertyPath>
+								<PropertyPath>CompleteBulkCount</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="CompleteBulkCount"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="CompleteNonBulkCount"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>DateProcessed</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="DateProcessed"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

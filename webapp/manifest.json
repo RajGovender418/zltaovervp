@@ -57,7 +57,16 @@
 		"dependencies": {
 			"minUI5Version": "1.65.6",
 			"libs": {
-				"sap.ovp": {}
+				"sap.fiori": {
+					"minVersion": ""
+				},
+				"sap.m": {
+					"minVersion": ""
+				},
+				"sap.ovp": {},
+				"sap.viz": {
+					"minVersion": ""
+				}
 			}
 		},
 		"models": {
@@ -99,6 +108,7 @@
 		"enableLiveFilter": false,
 		"considerAnalyticalParameters": false,
 		"useDateRangeType": true,
+		"refreshIntervalInMinutes": 2,
 		"cards": {
 			"card01": {
 				"model": "mainService",
@@ -155,9 +165,22 @@
 						"cols": 10
 					}
 				}
+			},
+			"card05": {
+				"model": "mainService",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "Bulk and Individual Refunds",
+					"entitySet": "xOSRQLDxC_LTARFDAN",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#RefundsBNIndentification",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#RefundsBNPresVar",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#RefundsBNChart",
+					"defaultSpan": {
+						"cols": 10
+					}
+				}
 			}
-		},
-		"refreshIntervalInMinutes": 2
+		}
 	},
 	"sap.platform.abap": {
 		"uri": "/sap/bc/ui5_ui5/osrqld/cpmovp/webapp",
