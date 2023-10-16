@@ -82,28 +82,35 @@
 			<Annotations Target="Metadata.xOSRQLDxC_LTACmpReassessType">
 				<Annotation Term="UI.Chart" Qualifier="TotalAmountChart">
 					<Record Type="UI.ChartDefinitionType">
-						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/>
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
 						<PropertyValue Property="Measures">
-							<Collection/>
+							<Collection>
+								<PropertyPath>DaysToComplete</PropertyPath>
+								<PropertyPath>TotalAmount</PropertyPath>
+							</Collection>
 						</PropertyValue>
-						<PropertyValue Property="Title" String="{@i18n&gt;TOTAL_AMOUNT}"/>
+						<PropertyValue Property="Title" String="{@i18n&gt;WORK_ITEMS}"/>
 						<PropertyValue Property="MeasureAttributes">
 							<Collection>
 								<Record Type="UI.ChartMeasureAttributeType">
 									<PropertyValue Property="Measure" PropertyPath="TotalAmount"/>
 									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
 								</Record>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="DaysToComplete"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/>
+								</Record>
 							</Collection>
 						</PropertyValue>
 						<PropertyValue Property="Dimensions">
 							<Collection>
-								<PropertyPath>ApprovalWorkItemID</PropertyPath>
+								<PropertyPath>ApprovalWorkItemIDString</PropertyPath>
 							</Collection>
 						</PropertyValue>
 						<PropertyValue Property="DimensionAttributes">
 							<Collection>
 								<Record Type="UI.ChartDimensionAttributeType">
-									<PropertyValue Property="Dimension" PropertyPath="ApprovalWorkItemID"/>
+									<PropertyValue Property="Dimension" PropertyPath="ApprovalWorkItemIDString"/>
 									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
 								</Record>
 							</Collection>
@@ -147,13 +154,13 @@
 						</PropertyValue>
 						<PropertyValue Property="Dimensions">
 							<Collection>
-								<PropertyPath>ApprovalWorkItemID</PropertyPath>
+								<PropertyPath>ApprovalWorkItemIDString</PropertyPath>
 							</Collection>
 						</PropertyValue>
 						<PropertyValue Property="DimensionAttributes">
 							<Collection>
 								<Record Type="UI.ChartDimensionAttributeType">
-									<PropertyValue Property="Dimension" PropertyPath="ApprovalWorkItemID"/>
+									<PropertyValue Property="Dimension" PropertyPath="ApprovalWorkItemIDString"/>
 									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
 								</Record>
 							</Collection>

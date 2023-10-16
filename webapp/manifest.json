@@ -142,7 +142,7 @@
 				"model": "mainService",
 				"template": "sap.ovp.cards.charts.analytical",
 				"settings": {
-					"title": "Total Amount",
+					"title": "Total Amount and Days to Complete",
 					"entitySet": "xOSRQLDxC_LTACmpReassess",
 					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#TotalDaysIndentification",
 					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#TotalDaysPresVar",
