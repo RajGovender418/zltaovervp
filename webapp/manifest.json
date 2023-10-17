@@ -143,17 +143,32 @@
 				"model": "mainService",
 				"template": "sap.ovp.cards.charts.analytical",
 				"settings": {
-					"title": "Total Days to Complete",
-					"entitySet": "xOSRQLDxC_LTACmpReassess",
-					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#TotalDaysIndentification",
-					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#TotalDaysPresVar",
-					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#TotalDaysChart",
+					"title": "Completed Refunds",
+					"entitySet": "xOSRQLDxC_LTACRFAna",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#RefundsARIndentification",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#RefundsARPresVar",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#RefundsARChart",
 					"defaultSpan": {
-						"cols": 10
+						"cols": 3
 					}
 				}
 			},
 			"card03": {
+				"model": "mainService",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "Refunds - Bulk and Individual",
+					"entitySet": "xOSRQLDxC_LTADFAna",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#RefundsBIsIndentification",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#RefundsBIPresVar",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#RefundsBIChart",
+					"defaultSpan": {
+						"cols": 3
+					}
+				}
+			},
+			
+			"card04": {
 				"model": "mainService",
 				"template": "sap.ovp.cards.charts.analytical",
 				"settings": {
@@ -163,7 +178,7 @@
 					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#TotalDaysPresVar",
 					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#TotalAmountChart",
 					"defaultSpan": {
-						"cols": 10
+						"cols": 99
 					}
 				}
 			},
@@ -177,7 +192,7 @@
 					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#RefundsBNPresVar",
 					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#RefundsBNChart",
 					"defaultSpan": {
-						"cols": 10
+						"cols": 99
 					}
 				}
 			}

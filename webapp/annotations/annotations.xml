@@ -9,42 +9,6 @@
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="osrqld.trm.lta.completereassess.test.LTA_REASSESS_SRV">
 			<Annotations Target="Metadata.xOSRQLDxC_LTACRAnaType">
-				<!--<Annotation Term="UI.Chart" Qualifier="CompleteARChart">-->
-				<!--	<Record Type="UI.ChartDefinitionType">-->
-				<!--		<PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>-->
-				<!--		<PropertyValue Property="Measures">-->
-				<!--			<Collection>-->
-				<!--				<PropertyPath>ApprovedCount</PropertyPath>-->
-				<!--				<PropertyPath>RejectedCount</PropertyPath>-->
-				<!--			</Collection>-->
-				<!--		</PropertyValue>-->
-				<!--		<PropertyValue Property="MeasureAttributes">-->
-				<!--			<Collection>-->
-				<!--				<Record Type="UI.ChartMeasureAttributeType">-->
-				<!--					<PropertyValue Property="Measure" PropertyPath="RejectedCount"/>-->
-				<!--					<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>-->
-				<!--				</Record>-->
-				<!--				<Record Type="UI.ChartMeasureAttributeType">-->
-				<!--					<PropertyValue Property="Measure" PropertyPath="ApprovedCount"/>-->
-				<!--					<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/>-->
-				<!--				</Record>-->
-				<!--			</Collection>-->
-				<!--		</PropertyValue>-->
-				<!--		<PropertyValue Property="Dimensions">-->
-				<!--			<Collection>-->
-				<!--				<PropertyPath>DateProcessed</PropertyPath>-->
-				<!--			</Collection>-->
-				<!--		</PropertyValue>-->
-				<!--		<PropertyValue Property="DimensionAttributes">-->
-				<!--			<Collection>-->
-				<!--				<Record Type="UI.ChartDimensionAttributeType">-->
-				<!--					<PropertyValue Property="Dimension" PropertyPath="DateProcessed"/>-->
-				<!--					<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>-->
-				<!--				</Record>-->
-				<!--			</Collection>-->
-				<!--		</PropertyValue>-->
-				<!--	</Record>-->
-				<!--</Annotation>-->
 				<Annotation Term="UI.Chart" Qualifier="approvedRejectChart">
 					<Record Type="UI.ChartDefinitionType">
 						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
@@ -221,7 +185,7 @@
 						<PropertyValue Property="RequestAtLeast">
 							<Collection>
 								<PropertyPath>RuleTypeText</PropertyPath>
-								<PropertyPath >Entries</PropertyPath>
+								<PropertyPath>Entries</PropertyPath>
 							</Collection>
 						</PropertyValue>
 					</Record>
@@ -309,6 +273,126 @@
 									<PropertyValue Property="Dimension" PropertyPath="DateProcessed"/>
 									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
 								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="Metadata.xOSRQLDxC_LTACRFAnaType">
+				<Annotation Term="UI.Chart" Qualifier="RefundsARChart">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>Entries</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="Entries"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>ResultTypeText</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="ResultTypeText"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="RefundsARTotalCountDP">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="Entries"/>
+						<PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Number"/>
+						<PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Positive"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="RefundsARRIndentification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation">
+							<PropertyValue Property="SemanticObject" String="CompletedReasses"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="RefundsARPresVar">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="Visualizations">
+							<Collection/>
+						</PropertyValue>
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>ResultTypeText</PropertyPath>
+								<PropertyPath>Entries</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="Metadata.xOSRQLDxC_LTADFAnaType">
+				<Annotation Term="UI.Chart" Qualifier="RefundsBIChart">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>Entries</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="Entries"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>RuleTypeText</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="RuleTypeText"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="RefundsBICountDP">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="Entries"/>
+						<PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Number"/>
+						<PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Positive"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="RefundsBIIndentification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation">
+							<PropertyValue Property="SemanticObject" String="CompletedReasses"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="RefundsBIPresVar">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="Visualizations">
+							<Collection/>
+						</PropertyValue>
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>RuleTypeText</PropertyPath>
+								<PropertyPath>Entries</PropertyPath>
 							</Collection>
 						</PropertyValue>
 					</Record>
