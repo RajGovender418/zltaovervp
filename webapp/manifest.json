@@ -119,8 +119,9 @@
 					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#CompletedDecisionsIdenti",
 					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#CompletedDecisionsPresVar",
 					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#CompletedDecisionsChart",
+					"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TotalCountDP",
 					"defaultSpan": {
-						"cols": 3
+						"cols": 2
 					}
 				}
 			},
@@ -133,9 +134,9 @@
 					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#CompleteARIndentification",
 					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#CompleteARPresVar",
 					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#approvedRejectChart",
-					"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#totalCountDP",
+					"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TotalCountDP",
 					"defaultSpan": {
-						"cols": 3
+						"cols": 2
 					}
 				}
 			},
@@ -148,8 +149,9 @@
 					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#RefundsARIndentification",
 					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#RefundsARPresVar",
 					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#RefundsARChart",
+					"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TotalCountDP",
 					"defaultSpan": {
-						"cols": 3
+						"cols": 2
 					}
 				}
 			},
@@ -159,15 +161,15 @@
 				"settings": {
 					"title": "Refunds - Bulk and Individual",
 					"entitySet": "xOSRQLDxC_LTADFAna",
-					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#RefundsBIsIndentification",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#RefundsBIIndentification",
 					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#RefundsBIPresVar",
 					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#RefundsBIChart",
+					"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TotalCountDP",
 					"defaultSpan": {
-						"cols": 3
+						"cols": 2
 					}
 				}
 			},
-			
 			"card04": {
 				"model": "mainService",
 				"template": "sap.ovp.cards.charts.analytical",
@@ -177,20 +179,7 @@
 					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#TotalDaysIndentification",
 					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#TotalDaysPresVar",
 					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#TotalAmountChart",
-					"defaultSpan": {
-						"cols": 99
-					}
-				}
-			},
-			"card05": {
-				"model": "mainService",
-				"template": "sap.ovp.cards.charts.analytical",
-				"settings": {
-					"title": "Bulk and Individual Refunds",
-					"entitySet": "xOSRQLDxC_LTARFDAN",
-					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#RefundsBNIndentification",
-					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#RefundsBNPresVar",
-					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#RefundsBNChart",
+					"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TotalCountDP",
 					"defaultSpan": {
 						"cols": 99
 					}

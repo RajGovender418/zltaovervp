@@ -40,11 +40,12 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
-				<Annotation Term="UI.DataPoint" Qualifier="totalCountDP">
+				<Annotation Term="UI.DataPoint" Qualifier="TotalCountDP">
 					<Record Type="UI.DataPointType">
 						<PropertyValue Property="Value" Path="Entries"/>
 						<PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Number"/>
 						<PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Positive"/>
+						<PropertyValue Property="Title" String="{@i18n&gt;TOTAL}"/>
 					</Record>
 				</Annotation>
 				<Annotation Term="UI.Identification" Qualifier="CompleteARIndentification">
@@ -69,6 +70,11 @@
 				</Annotation>
 			</Annotations>
 			<Annotations Target="Metadata.xOSRQLDxC_LTACmpReassessType">
+				<Annotation Term="UI.DataPoint" Qualifier="TotalCountDP">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="RecordCount"/>
+					</Record>
+				</Annotation>
 				<Annotation Term="UI.Chart" Qualifier="TotalAmountChart">
 					<Record Type="UI.ChartDefinitionType">
 						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
@@ -165,11 +171,12 @@
 				</Annotation>
 			</Annotations>
 			<Annotations Target="Metadata.xOSRQLDxC_LTACDAnaType">
-				<Annotation Term="UI.DataPoint" Qualifier="CompletedDecisionsDP">
+				<Annotation Term="UI.DataPoint" Qualifier="TotalCountDP">
 					<Record Type="UI.DataPointType">
 						<PropertyValue Property="Value" Path="Entries"/>
 						<PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Number"/>
 						<PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Positive"/>
+						<PropertyValue Property="Title" String="{@i18n&gt;TOTAL}"/>
 					</Record>
 				</Annotation>
 				<Annotation Term="UI.Identification" Qualifier="CompletedDecisionsIdenti">
@@ -223,6 +230,11 @@
 				</Annotation>
 			</Annotations>
 			<Annotations Target="Metadata.xOSRQLDxC_LTARFDANType">
+				<Annotation Term="UI.DataPoint" Qualifier="TotalCountDP">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="Entries"/>
+					</Record>
+				</Annotation>
 				<Annotation Term="UI.Identification" Qualifier="RefundsBNIdentification">
 					<Collection>
 						<Record Type="UI.DataFieldWithIntentBasedNavigation">
@@ -310,14 +322,14 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
-				<Annotation Term="UI.DataPoint" Qualifier="RefundsARTotalCountDP">
+				<Annotation Term="UI.DataPoint" Qualifier="TotalCountDP">
 					<Record Type="UI.DataPointType">
 						<PropertyValue Property="Value" Path="Entries"/>
 						<PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Number"/>
 						<PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Positive"/>
 					</Record>
 				</Annotation>
-				<Annotation Term="UI.Identification" Qualifier="RefundsARRIndentification">
+				<Annotation Term="UI.Identification" Qualifier="RefundsARIndentification">
 					<Collection>
 						<Record Type="UI.DataFieldForIntentBasedNavigation">
 							<PropertyValue Property="SemanticObject" String="CompletedReasses"/>
@@ -370,7 +382,7 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
-				<Annotation Term="UI.DataPoint" Qualifier="RefundsBICountDP">
+				<Annotation Term="UI.DataPoint" Qualifier="TotalCountDP">
 					<Record Type="UI.DataPointType">
 						<PropertyValue Property="Value" Path="Entries"/>
 						<PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Number"/>
