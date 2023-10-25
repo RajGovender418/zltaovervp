@@ -174,6 +174,36 @@
 				"model": "mainService",
 				"template": "sap.ovp.cards.charts.analytical",
 				"settings": {
+					"title": "Reprocessing Reassessments",
+					"entitySet": "xOSRQLDxC_LTARPAna",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#ReprocAssessIndentification",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#ReprocAssessPresVar",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ReprocAssessChart",
+					"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TotalCountDP",
+					"defaultSpan": {
+						"cols": 2
+					}
+				}
+			},
+			"card05": {
+				"model": "mainService",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "Reprocessing Refunds",
+					"entitySet": "xOSRQLDxC_LTARPFAna",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#ReprocRefundsIndentification",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#ReprocRefundsPresVar",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ReprocRefundsChart",
+					"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TotalCountDP",
+					"defaultSpan": {
+						"cols": 2
+					}
+				}
+			},
+			"card06": {
+				"model": "mainService",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
 					"title": "Total Amount and Days to Complete",
 					"entitySet": "xOSRQLDxC_LTACmpReassess",
 					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#TotalDaysIndentification",

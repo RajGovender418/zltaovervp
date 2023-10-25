@@ -69,6 +69,126 @@
 					</Record>
 				</Annotation>
 			</Annotations>
+			<Annotations Target="Metadata.xOSRQLDxC_LTARPAnaType">
+				<Annotation Term="UI.Chart" Qualifier="ReprocAssessChart">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>Entries</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="Entries"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>Status</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="Status"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="TotalCountDP">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="Entries"/>
+						<PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Number"/>
+						<PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Positive"/>
+						<PropertyValue Property="Title" String="{@i18n&gt;TOTAL}"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="ReprocAssessIndentification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation">
+							<PropertyValue Property="SemanticObject" String="CompletedReasses"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="ReprocAssessPresVar">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="Visualizations">
+							<Collection/>
+						</PropertyValue>
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>Entries</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+				<Annotations Target="Metadata.xOSRQLDxC_LTARPFAnaType">
+				<Annotation Term="UI.Chart" Qualifier="ReprocRefundsChart">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>Entries</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="Entries"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>Status</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="Status"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="TotalCountDP">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="Entries"/>
+						<PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Number"/>
+						<PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Positive"/>
+						<PropertyValue Property="Title" String="{@i18n&gt;TOTAL}"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="ReprocRefundsIndentification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation">
+							<PropertyValue Property="SemanticObject" String="CompletedReasses"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="ReprocRefundsPresVar">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="Visualizations">
+							<Collection/>
+						</PropertyValue>
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>Entries</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
 			<Annotations Target="Metadata.xOSRQLDxC_LTACmpReassessType">
 				<Annotation Term="UI.DataPoint" Qualifier="TotalCountDP">
 					<Record Type="UI.DataPointType">
